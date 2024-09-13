@@ -2,7 +2,7 @@
 title: "Lists - In Class Exercises"
 author: "Dr. Shoemaker"
 date: "DATA 2401"
-output:nhtml_document
+output: html_document
 
 ---
 
@@ -11,7 +11,13 @@ output:nhtml_document
 Make a list that contains the information on a single playing card. Suit, face, and value. 
 
 ```{r}
+single_playing_card <- list (
+  suit = c("diamonds"),
+  face = c("jacks"),
+  value = c(13)
+)
 
+single_playing_card
 
 ```
 
@@ -19,6 +25,13 @@ Make a list that contains the information on a single playing card. Suit, face, 
 Make a second list where each element contains all the options for suit, face, and value, respectively. 
 
 ```{r}
+playing_card_with_options <- list (
+  suit = c("spades", "clubs", "hearts", "diamonds"),
+  face = c("kings" ,"queens", "jacks"),
+  value = c(11,12,13)
+)
+
+playing_card_with_options
 
 
 ```
@@ -28,6 +41,8 @@ If `Newlist <- list(a=1:10, b="Good morning", c="Hi")`, write an R statement tha
 
 ```{r}
 Newlist <- list(a=1:10, b="Good morning", c="Hi")
+Newlist$a <- Newlist$a + 1
+Newlist
 
 
 ```
@@ -36,7 +51,10 @@ If `b <- list(a=1:10, c="Hello", d="AA")`, write an R expression that will give 
 
 ```{r}
 b <- list(a=1:10, c="Hello", d="AA")
+b$a[-2]
 
+condition <- (b$a > 7)
+b$a[condition]
 
 ```
 
@@ -44,6 +62,7 @@ Let `x <- list(a=5:10, c="Hello", d="AA")`, write an R statement to add a new it
 
 ```{r}
 x <- list(a=5:10, c="Hello", d="AA")
-
+x$z = "NewItem"
+x
 
 ```
